@@ -4,7 +4,7 @@ interface HeroSectionProps {}
 
 const HeroSection = ({}: HeroSectionProps) => {
   const texts = {
-    smallTitle: ":לאתר שלך יש תפקיד אחד",
+    smallTitle: "לאתר שלך יש תפקיד אחד:",
     mainTitle: "לגרום לאנשים לעצור, להרגיש, ולהגיד",
     colorTitle: "זה בדיוק מה שחיפשתי",
     description:
@@ -13,17 +13,19 @@ const HeroSection = ({}: HeroSectionProps) => {
     textUnderButton: "בלי התחייבות, רק שיחת היכרות",
   };
   return (
-    <div className="text-center flex flex-col items-center justify-center">
+    <div className="text-right text-color-brand-whiteYellow-100-light sm:text-center leading-none">
       <p className="text-size-brand-p">{texts.smallTitle}</p>
-      <h1 className="text-size-brand-h1 font-black">
+      <h1 className="text-size-brand-h2 sm:text-size-brand-h1 font-black mb-2 ">
         {texts.mainTitle}{" "}
-        <span className="text-color-brand-pink-500-dark">
+        <span className="text-color-brand-pink-500-dark block ">
           "{texts.colorTitle}"
         </span>
       </h1>
-      <h3>{texts.description}</h3>
-      <button>{texts.button}</button>
-      <p>{texts.textUnderButton}</p>
+      <h3 className="text-size-brand-h5 leading-snug mb-8 w-full sm:w-5/8 mx-auto">
+        {texts.description}
+      </h3>
+      <button className="text-size-brand-h6 font-black">{texts.button}</button>
+      <p className="text-size-brand-p-small">{texts.textUnderButton}</p>
     </div>
   );
 };
