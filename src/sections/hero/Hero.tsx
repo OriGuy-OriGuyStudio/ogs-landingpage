@@ -20,6 +20,10 @@ const HeroSection = ({}: HeroSectionProps) => {
   };
   return (
     <div className="text-right text-color-brand-whiteYellow-100-light sm:text-center leading-none">
+      <div className="bg-color-brand-purple-500-light w-60 h-60 blur-[800px] -z-10 absolute left-0 top-0" />
+      <div className="bg-color-brand-pink-500-dark w-60 h-60 blur-[800px] -z-10 absolute right-0 top-0" />
+      <div className="bg-color-brand-pink-500-dark w-60 h-60 blur-[800px] -z-10 absolute left-0 bottom-0" />
+      <div className="bg-color-brand-purple-500-light w-60 h-60 blur-[800px] -z-10 absolute right-0 bottom-0" />
       <p className="text-size-brand-p">{texts.smallTitle}</p>
       <h1 className="text-size-brand-h2 sm:text-size-brand-h1 font-black mb-2 ">
         {texts.mainTitle}{" "}
