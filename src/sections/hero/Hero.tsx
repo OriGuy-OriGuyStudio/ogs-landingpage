@@ -19,7 +19,7 @@ const HeroSection = ({}: HeroSectionProps) => {
     promotionTextUnder: 'לחצו כאן לפרטים נוספים',
   };
   return (
-    <section className="text-color-brand-whiteYellow-100-light relative flex h-screen flex-col items-start justify-center text-right leading-none sm:items-center sm:justify-center sm:text-center">
+    <section className="text-color-brand-whiteYellow-100-light relative flex h-screen flex-col items-center justify-center text-center leading-none sm:items-center sm:justify-center sm:text-center">
       <div className="bg-color-brand-whiteYellow-100-light/8 text-color-brand-whiteYellow-100-light fixed top-0 right-0 bottom-0 left-0 flex h-34 flex-col items-center justify-center gap-2 rounded-br-3xl rounded-bl-3xl px-4 text-center drop-shadow-lg backdrop-blur-sm sm:px-20">
         <p className="text-size-brand-h5 sm:text-size-brand-h2 font-black">
           {texts.promotion}
@@ -51,7 +51,7 @@ const HeroSection = ({}: HeroSectionProps) => {
           {texts.mainTitle}{' '}
           <span
             ref={textToScale}
-            className="magnify-container text-color-brand-pink-500-dark relative inline-block w-fit"
+            className="magnify-container text-color-brand-pink-500-dark relative inline-block w-fit border-2"
           >
             "{texts.colorTitle}"
             <span>
