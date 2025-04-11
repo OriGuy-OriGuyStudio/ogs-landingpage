@@ -1,9 +1,15 @@
 'use client';
 import BluredBgColors from '@/app/components/hero/BluredBgColors';
 import HeroButton from '@/app/components/hero/HeroButton';
+import MainHeroTitles from '@/app/components/hero/MainHeroTitles';
 import PromotionBanner from '@/app/components/hero/PromotionBanner';
-import { Search } from 'lucide-react';
+import SecondaryHeroTitle from '@/app/components/hero/SecondaryHeroTitle';
+import SmallHeroTitle from '@/app/components/hero/SmallHeroTitle';
+import { Scale, Search } from 'lucide-react';
 import { useRef } from 'react';
+import { delay, motion } from 'framer-motion';
+import { span, tr } from 'motion/react-client';
+import { circIn } from 'motion';
 
 interface HeroSectionProps {}
 
@@ -20,6 +26,35 @@ const HeroSection = ({}: HeroSectionProps) => {
     promotion: 'מבצע מיוחד ל 5 לקוחות ראשונים !',
     promotionTextUnder: 'לחצו כאן לפרטים נוספים',
   };
+
+  // Define proper variants for parent and children
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        delay: 1.5,
+        ease: 'backOut',
+        delayChildren: 2,
+        staggerChildren: 0.4,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40, scaleZ: 0 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scaleZ: 1,
+      transition: {
+        duration: 0.86,
+        circIn: { duration: 0.86 },
+      },
+    },
+  };
+
   return (
     <section className="text-color-brand-whiteYellow-100-light relative flex h-screen flex-col items-center justify-center text-center leading-none sm:items-center sm:justify-center sm:text-center">
       <PromotionBanner
@@ -27,29 +62,37 @@ const HeroSection = ({}: HeroSectionProps) => {
         textBottom={texts.promotionTextUnder}
       />
       <BluredBgColors />
-      <div className="w-full max-w-full">
-        <p className="text-size-brand-h6">{texts.smallTitle}</p>
-        <h1 className="text-size-brand-h2 sm:text-size-brand-h1 mb-2 font-black">
-          {texts.mainTitle}{' '}
-          <span
-            ref={textToScale}
-            className="magnify-container text-color-brand-pink-500-dark relative inline-block w-fit border-2"
-          >
-            "{texts.colorTitle}"
-            <span>
-              <Search
-                size={48}
-                className="absolute -top-2 -right-3 sm:size-24"
-              />
-            </span>
-          </span>
-        </h1>
-        <h3 className="text-size-brand-h6 mx-auto mb-8 w-full leading-snug sm:w-5/8">
-          {texts.description}
-        </h3>
-        <HeroButton text={texts.button} />
-        <p className="text-size-brand-p">{texts.textUnderButton}</p>
-      </div>
+
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="flex flex-col items-center"
+      >
+        <motion.div variants={itemVariants}>
+          <SmallHeroTitle text={texts.smallTitle} />
+        </motion.div>
+
+        <motion.div variants={itemVariants}>
+          <MainHeroTitles
+            mainText={texts.mainTitle}
+            colorText={texts.colorTitle}
+          />
+        </motion.div>
+
+        <motion.div variants={itemVariants}>
+          <SecondaryHeroTitle text={texts.description} />
+        </motion.div>
+
+        <motion.div variants={itemVariants}>
+          <HeroButton text={texts.button} />
+        </motion.div>
+
+        <motion.p variants={itemVariants} className="text-size-brand-p">
+          {texts.textUnderButton}
+        </motion.p>
+      </motion.div>
     </section>
   );
 };
