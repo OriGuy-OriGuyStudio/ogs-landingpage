@@ -7,14 +7,17 @@ import SecondaryHeroTitle from '@/app/components/hero/SecondaryHeroTitle';
 import SmallHeroTitle from '@/app/components/hero/SmallHeroTitle';
 import { Scale, Search } from 'lucide-react';
 import { useRef } from 'react';
-import { delay, motion } from 'framer-motion';
+import { delay, motion, MotionValue, useTransform } from 'framer-motion';
 import { span, tr } from 'motion/react-client';
 import { circIn } from 'motion';
 
-interface HeroSectionProps {}
+interface HeroSectionProps {
+  scrollYProgress: MotionValue<number>;
+}
 
-const HeroSection = ({}: HeroSectionProps) => {
-  const textToScale = useRef<HTMLSpanElement>(null);
+const HeroSection = ({ scrollYProgress }: HeroSectionProps) => {
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.2]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, -4]);
   const texts = {
     smallTitle: 'לאתר שלך יש תפקיד אחד:',
     mainTitle: 'לגרום לאנשים לעצור, להרגיש, ולהגיד',
@@ -56,7 +59,10 @@ const HeroSection = ({}: HeroSectionProps) => {
   };
 
   return (
-    <section className="text-color-brand-whiteYellow-100-light relative flex h-screen flex-col items-center justify-center text-center leading-none sm:items-center sm:justify-center sm:text-center">
+    <motion.section
+      style={{ scale, rotate }}
+      className="text-color-brand-whiteYellow-100-light bg-color-brand-purple-900-dark sticky top-0 z-0 flex h-screen origin-center flex-col items-center justify-center px-4 text-center leading-none sm:items-center sm:justify-center sm:px-20 sm:text-center"
+    >
       <PromotionBanner
         textTop={texts.promotion}
         textBottom={texts.promotionTextUnder}
@@ -93,7 +99,7 @@ const HeroSection = ({}: HeroSectionProps) => {
           {texts.textUnderButton}
         </motion.p>
       </motion.div>
-    </section>
+    </motion.section>
   );
 };
 
