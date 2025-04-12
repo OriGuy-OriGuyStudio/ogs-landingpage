@@ -8,7 +8,7 @@ import {
 } from 'react';
 
 interface PainCTAProps {
-  ref: RefObject<null>;
+  ref: RefObject<HTMLDivElement | null>;
   setShowTitles: Dispatch<SetStateAction<boolean>>;
 }
 

@@ -2,25 +2,26 @@
 import PainCTA from '@/app/components/painSection/PainCTA';
 import PainTitles from '@/app/components/painSection/PainTitles';
 import { motion, MotionValue, useTransform, useInView } from 'motion/react';
-import { useState, useEffect, useRef, SetStateAction } from 'react';
+import { useState, useEffect, useRef, SetStateAction, RefObject } from 'react';
 
 interface PainSectionProps {
   scrollYProgress: MotionValue<number>;
+  ref: RefObject<HTMLDivElement | null>;
 }
 
-const PainSection = ({ scrollYProgress }: PainSectionProps) => {
+const PainSection = ({ scrollYProgress, ref }: PainSectionProps) => {
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [4, 0]);
   const opacity = useTransform(scrollYProgress, [0, 1], [0.56, 1]);
   const roundedCorners = useTransform(scrollYProgress, [0, 1], ['0px', '24px']);
-  const ref = useRef(null);
+  // const ref = useRef(null);
   const [showTitles, setShowTitles] = useState<boolean>(false);
   return (
     <motion.div
       ref={ref}
       initial={{}}
       style={{ scale, rotate, opacity, borderRadius: roundedCorners }}
-      className="bg-color-brand-cyan-200-light relative z-10 flex h-screen flex-col items-center justify-center px-4 shadow-2xl sm:gap-6 sm:px-20"
+      className="bg-color-brand-cyan-200-light relative flex h-screen flex-col items-center justify-center px-4 shadow-2xl sm:gap-6 sm:px-20"
     >
       <motion.div
         initial={{ opacity: 0 }}

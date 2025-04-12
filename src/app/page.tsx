@@ -7,21 +7,40 @@ import { useRef } from 'react';
 
 export default function Home() {
   const container = useRef<HTMLDivElement>(null);
+  const painSectionRef = useRef<HTMLDivElement>(null);
+  const problemSectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ['start start', 'end end'],
   });
+  const { scrollYProgress: painScrollProgress } = useScroll({
+    target: painSectionRef,
+    offset: ['start end', 'start start'], // This range covers from when the section appears to when it's fully in view
+  });
+  const { scrollYProgress: problemScrollProgress } = useScroll({
+    target: problemSectionRef,
+    offset: ['start end', 'start start'], // This range covers from when the section appears to when it's fully in view
+  });
   return (
-    <main ref={container} className="h-[500vh]">
-      <div className="sticky top-0 h-screen overflow-hidden">
+    <main ref={container} className="relative">
+      <section className="sticky top-0 z-0 h-screen w-full overflow-hidden">
         <HeroSection scrollYProgress={scrollYProgress} />
-      </div>
-      <div className="sticky h-screen overflow-hidden">
-        <PainSection scrollYProgress={scrollYProgress} />
-      </div>
-      <div className="sticky h-[300vh] overflow-hidden">
-        <ProblemsSection scrollYProgress={scrollYProgress} />
-      </div>
+      </section>
+      <section
+        ref={painSectionRef}
+        className="sticky top-0 z-1 h-screen w-full overflow-hidden"
+      >
+        <PainSection
+          ref={painSectionRef}
+          scrollYProgress={painScrollProgress}
+        />
+      </section>
+      <section
+        ref={problemSectionRef}
+        className="sticky top-0 z-2 h-screen w-full overflow-hidden border-2 border-amber-700"
+      >
+        <ProblemsSection scrollYProgress={problemScrollProgress} />
+      </section>
     </main>
   );
 }
