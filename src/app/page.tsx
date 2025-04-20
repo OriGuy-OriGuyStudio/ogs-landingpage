@@ -1,14 +1,25 @@
 'use client';
+import ContactMe from '@/sections/ContactMe/ContactMe';
+import DemoProjects from '@/sections/demoProjects/DemoProjects';
+import DifferanceOthers from '@/sections/differanceOthers/DifferanceOthers';
 import HeroSection from '@/sections/hero/Hero';
 import PainSection from '@/sections/pain/PainSection';
 import ProblemsSection from '@/sections/problems/Problems';
-import { useScroll } from 'motion/react';
+import SolutionSection from '@/sections/solution/SolutionSection';
+import StepByStep from '@/sections/steps/StepByStep';
+import {
+  useMotionValue,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from 'motion/react';
 import { useEffect, useRef } from 'react';
 
 export default function Home() {
   const container = useRef<HTMLDivElement>(null);
   const painSectionRef = useRef<HTMLDivElement>(null);
   const problemSectionRef = useRef<HTMLDivElement>(null);
+  const solutionSectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ['start start', 'end end'],
@@ -21,9 +32,10 @@ export default function Home() {
     target: problemSectionRef,
     offset: ['start start', 'end end'], // This range covers from when the section appears to when it's fully in view
   });
-  useEffect(() => {
-    console.log('scrollYProgress', problemScrollProgress.get());
-  }, [problemScrollProgress]);
+  const { scrollYProgress: soltutionScrollProgress } = useScroll({
+    target: solutionSectionRef,
+    offset: ['start start', 'end end'], // This range covers from when the section appears to when it's fully in view
+  });
 
   return (
     <main ref={container} className="relative">
@@ -36,11 +48,20 @@ export default function Home() {
           scrollYProgress={painScrollProgress}
         />
       </section>
-      <div ref={problemSectionRef} className="h-[300vh]">
-        <section className="sticky top-0 z-3 h-screen w-full overflow-hidden border-2 border-amber-700">
+      <div ref={problemSectionRef} className="relative h-[300vh]">
+        <section className="no-scrollbar sticky top-0 z-3 w-full overflow-x-hidden overflow-y-scroll rounded-3xl shadow-2xl">
           <ProblemsSection scrollYProgress={problemScrollProgress} />
         </section>
       </div>
+      <div ref={solutionSectionRef} className="relative h-[500vh]">
+        <section className="no-scrollbar sticky top-0 z-6 h-screen w-full overflow-x-hidden shadow-2xl">
+          <SolutionSection scrollYProgress={soltutionScrollProgress} />
+        </section>
+      </div>
+      <section className="no-scrollbar bg-color-brand-gray-800-dark sticky top-0 z-10 h-screen w-full overflow-x-hidden shadow-2xl">
+        <DemoProjects />
+      </section>
+      <DifferanceOthers />
     </main>
   );
 }
