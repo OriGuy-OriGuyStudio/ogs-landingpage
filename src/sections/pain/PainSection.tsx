@@ -1,8 +1,8 @@
 'use client';
 import PainCTA from '@/app/components/painSection/PainCTA';
 import PainTitles from '@/app/components/painSection/PainTitles';
-import { motion, MotionValue, useTransform, useInView } from 'motion/react';
-import { useState, useEffect, useRef, SetStateAction, RefObject } from 'react';
+import { motion, MotionValue, useTransform } from 'motion/react';
+import { useState, RefObject } from 'react';
 
 interface PainSectionProps {
   scrollYProgress: MotionValue<number>;

@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 interface PromotionBannerProps {
-  textTop: string;
   textBottom: string;
 }
 
-const PromotionBanner = ({ textBottom, textTop }: PromotionBannerProps) => {
+const PromotionBanner = ({ textBottom }: PromotionBannerProps) => {
   const topText = useRef<HTMLParagraphElement>(null);
   const bottomText = useRef<HTMLParagraphElement>(null);
   return (

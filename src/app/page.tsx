@@ -1,19 +1,12 @@
 'use client';
-import ContactMe from '@/sections/ContactMe/ContactMe';
 import DemoProjects from '@/sections/demoProjects/DemoProjects';
 import DifferanceOthers from '@/sections/differanceOthers/DifferanceOthers';
 import HeroSection from '@/sections/hero/Hero';
 import PainSection from '@/sections/pain/PainSection';
 import ProblemsSection from '@/sections/problems/Problems';
 import SolutionSection from '@/sections/solution/SolutionSection';
-import StepByStep from '@/sections/steps/StepByStep';
-import {
-  useMotionValue,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from 'motion/react';
-import { useEffect, useRef } from 'react';
+import { useScroll } from 'motion/react';
+import { useRef } from 'react';
 
 export default function Home() {
   const container = useRef<HTMLDivElement>(null);

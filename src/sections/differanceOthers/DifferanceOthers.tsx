@@ -1,7 +1,4 @@
-import { Heart, Sparkle } from 'lucide-react';
 import React from 'react';
-
-import { motion } from 'motion/react';
 import DiffTitles from '@/app/components/differance/DiffTitles';
 import ListBenefits from '../../app/components/differance/ListBenefits';
 import BenefitsImage from '../../app/components/differance/BenefitsImage';

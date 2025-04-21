@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import heart from '/heart.svg';
 import Image from 'next/image';
 
 function BenefitsImage() {

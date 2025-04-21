@@ -1,6 +1,6 @@
-import { LucideProps, Scale, StepForward } from 'lucide-react';
+import { StepForward } from 'lucide-react';
 import { motion } from 'motion/react';
-import React, { JSX } from 'react';
+import React from 'react';
 
 export interface StepProps {
   icon: any;

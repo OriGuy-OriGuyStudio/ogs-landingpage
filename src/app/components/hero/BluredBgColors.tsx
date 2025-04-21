@@ -1,6 +1,4 @@
-interface BluredBgColorsProps {}
-
-const BluredBgColors = ({}: BluredBgColorsProps) => {
+const BluredBgColors = () => {
   return (
     <>
       <div

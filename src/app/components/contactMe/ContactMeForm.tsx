@@ -1,14 +1,10 @@
 'use client';
 import React, { useState } from 'react';
-import { Field, Form, Formik, useField, useFormik } from 'formik';
-
+import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { div } from 'motion/react-client';
 import { SendHorizontal } from 'lucide-react';
 import { motion } from 'motion/react';
 import axios from 'axios';
-import { json } from 'stream/consumers';
-import { log } from 'console';
 
 function ContactMeForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -43,21 +39,17 @@ function ContactMeForm() {
       tel: '',
       email: '',
     },
-    async onSubmit(values, formikHelpers) {
+    async onSubmit(values) {
       confetti({
         particleCount: 150,
         spread: 100,
         origin: { y: 0.8 },
       });
-      const json = JSON.stringify(values);
-      await axios.post(
-        'https://hook.eu2.make.com/1puo18kep0t4lrn8nbep3lzgqtbij25t',
-        {
-          name: values.name,
-          tel: values.tel,
-          email: values.email,
-        }
-      );
+      await axios.post(process.env.MAKE_URL, {
+        name: values.name,
+        tel: values.tel,
+        email: values.email,
+      });
       setSubmitted(true);
     },
     validationSchema: Yup.object({

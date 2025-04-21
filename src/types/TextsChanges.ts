@@ -1,5 +1,3 @@
-import { JSX } from 'react';
-
 export default interface textsChanges {
   title: {
     text: string;

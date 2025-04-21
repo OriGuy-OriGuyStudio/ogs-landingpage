@@ -5,11 +5,7 @@ import MainHeroTitles from '@/app/components/hero/MainHeroTitles';
 import PromotionBanner from '@/app/components/hero/PromotionBanner';
 import SecondaryHeroTitle from '@/app/components/hero/SecondaryHeroTitle';
 import SmallHeroTitle from '@/app/components/hero/SmallHeroTitle';
-import { Scale, Search } from 'lucide-react';
-import { useRef } from 'react';
-import { delay, motion, MotionValue, useTransform } from 'framer-motion';
-import { span, tr } from 'motion/react-client';
-import { circIn } from 'motion';
+import { motion, MotionValue, useTransform } from 'framer-motion';
 
 interface HeroSectionProps {
   scrollYProgress: MotionValue<number>;

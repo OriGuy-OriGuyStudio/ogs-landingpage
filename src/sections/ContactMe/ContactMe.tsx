@@ -1,23 +1,9 @@
 import ContactMeForm from '@/app/components/contactMe/ContactMeForm';
-import { contactFormSchema } from '@/util/zodSchemas';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { AtSign } from 'lucide-react';
-import { motion } from 'motion/react';
 import Image from 'next/image';
 import React from 'react';
-import { Form, useForm } from 'react-hook-form';
-import { z } from 'zod';
 
 function ContactMe() {
-  const form = useForm<z.infer<typeof contactFormSchema>>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      name: '',
-      tel: '',
-      email: '',
-    },
-  });
-
   return (
     <div className="bg-color-brand-purple-900-dark bottom-0 h-screen px-4 py-20 sm:px-20">
       <div className="lg:text-size-brand-h1 text-size-brand-h2 leading-none font-black">

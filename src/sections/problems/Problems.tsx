@@ -1,10 +1,6 @@
 import textsChanges from '@/types/TextsChanges';
-import { log } from 'console';
 import { motion, MotionValue, useMotionValueEvent } from 'motion/react';
-import { div } from 'motion/react-client';
-import { title } from 'process';
-import { use, useEffect, useState } from 'react';
-import { text } from 'stream/consumers';
+import { useState } from 'react';
 import TextsChangeOnScroll from './TextsChangeOnScroll';
 
 interface ProblemsSectionProps {

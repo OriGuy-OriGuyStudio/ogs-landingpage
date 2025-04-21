@@ -1,4 +1,3 @@
-import { Search } from 'lucide-react';
 import { useRef } from 'react';
 
 interface MainHeroTitlesProps {
@@ -15,10 +14,7 @@ const MainHeroTitles = ({ mainText, colorText }: MainHeroTitlesProps) => {
         ref={textToScale}
         className="magnify-container text-color-brand-pink-500-dark sm:text-size-brand-h1 relative inline-block w-fit font-black text-pretty"
       >
-        "{colorText}"
-        {/* <span>
-          <Search size={48} className="absolute -top-2 sm:size-24" />
-        </span> */}
+        &quot;{colorText}&quot;
       </span>
     </h1>
   );

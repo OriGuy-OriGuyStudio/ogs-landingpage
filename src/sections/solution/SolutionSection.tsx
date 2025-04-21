@@ -1,16 +1,8 @@
 import HeroButton from '@/app/components/hero/HeroButton';
-import {
-  Braces,
-  Crosshair,
-  Handshake,
-  Icon,
-  Target,
-  WandSparkles,
-} from 'lucide-react';
+import { Braces, Handshake, Target } from 'lucide-react';
 import { MotionValue } from 'motion';
 import { motion, useMotionValueEvent, useTransform } from 'motion/react';
-import { title } from 'process';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 interface SolutionSectionProps {
   scrollYProgress: MotionValue<number>;

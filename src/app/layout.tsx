@@ -16,7 +16,10 @@ export default function RootLayout({
       <body className="overflow-x-hidden">
         {children}
 
-        <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+        <script
+          src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"
+          async
+        ></script>
       </body>
     </html>
   );

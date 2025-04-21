@@ -1,5 +1,4 @@
 import Step, { StepProps } from '@/app/components/steps/Step';
-import { Opacity } from '@tsparticles/engine';
 import { Code, ListTodo, PhoneCall, Rocket, SplinePointer } from 'lucide-react';
 import { motion } from 'motion/react';
 import React from 'react';
