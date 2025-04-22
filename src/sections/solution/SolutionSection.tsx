@@ -3,6 +3,7 @@ import HeroButton from '@/app/components/hero/HeroButton';
 import { Braces, Handshake, Target } from 'lucide-react';
 import { MotionValue } from 'motion';
 import { motion, useMotionValueEvent, useTransform } from 'motion/react';
+import Image from 'next/image';
 import React, { useState } from 'react';
 
 interface SolutionSectionProps {
@@ -137,10 +138,14 @@ const SolutionSection = ({ scrollYProgress }: SolutionSectionProps) => {
   });
 
   return (
-    <div className="bg-colorBrandGreen500medium text-colorBrandGray800dark grid h-screen grid-cols-1 grid-rows-2 gap-4 px-2 md:px-20">
-      <div
-        className="bg-color-brand-green-200-light pointer-events-none absolute z-10 size-80 rounded-full opacity-80 blur-[100px] sm:blur-[200px] md:size-[36rem]"
-        style={{ top: '-210px', left: '29%' }}
+    <div className="grid h-screen grid-cols-1 grid-rows-2 gap-4 bg-colorBrandGreen500medium px-2 text-colorBrandGray800dark md:px-20">
+      <Image
+        src={'/upRight.png'}
+        alt={'upRight'}
+        width={20}
+        height={20}
+        className="pointer-events-none absolute -z-50 size-80 md:size-[36rem]"
+        style={{ top: '0', right: '0' }}
       />
       {/* Header with scale animation */}
       <motion.div
@@ -150,7 +155,7 @@ const SolutionSection = ({ scrollYProgress }: SolutionSectionProps) => {
         <h3 className="text-textsizebrandh1 font-black leading-none">
           הגיע הזמן לעשות
         </h3>
-        <h3 className="text-textsizebrandh1 text-colorBrandPurple500light font-black leading-none">
+        <h3 className="text-textsizebrandh1 font-black leading-none text-colorBrandPurple500light">
           את זה כמו שצריך
         </h3>
         {/* <p>{scrollYProgress.get()}</p> */}
@@ -166,8 +171,8 @@ const SolutionSection = ({ scrollYProgress }: SolutionSectionProps) => {
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center justify-center text-center"
         >
-          <p className="text-textsizebrandh5 flex-start text-background flex h-fit flex-col gap-2 whitespace-pre-wrap text-pretty text-right font-medium leading-snug md:text-center lg:items-center">
-            <span className="text-textsizebrandh4 flex flex-row items-center justify-start gap-4 font-extrabold">
+          <p className="flex-start text-background flex h-fit flex-col gap-2 whitespace-pre-wrap text-pretty text-right text-textsizebrandh5 font-medium leading-snug md:text-center lg:items-center">
+            <span className="flex flex-row items-center justify-start gap-4 text-textsizebrandh4 font-extrabold">
               {solutionTexts[currentTextIndex].icon}{' '}
               {solutionTexts[currentTextIndex].title}
             </span>
