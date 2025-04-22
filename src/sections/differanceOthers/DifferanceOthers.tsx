@@ -10,7 +10,7 @@ import Image from 'next/image';
 
 function DifferanceOthers() {
   return (
-    <div className="bg-color-brand-purple-900-dark sticky top-0 z-10 px-4 py-20 sm:px-20">
+    <div className="bg-colorBrandPurple900dark sticky top-0 z-10 px-2 py-20 sm:px-20">
       <DiffHighlight />
       <section className="z-20">
         <DiffTitles />

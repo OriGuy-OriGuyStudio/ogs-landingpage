@@ -10,7 +10,7 @@ function ListBenefits() {
           color={'#F55274'}
           className="shrink-0 animate-pulse"
         />
-        <p className="text-size-brand-h5">
+        <p className="text-textsizebrandh5">
           תהליך אישי - אתה לא עוד לקוח במערכת, אני מלווה אותך אחד על אחד, תהליך
           אישי ומותאם
         </p>
@@ -21,7 +21,7 @@ function ListBenefits() {
           color={'#F55274'}
           className="shrink-0 animate-pulse"
         />
-        <p className="text-size-brand-h5">
+        <p className="text-textsizebrandh5">
           התאמה מלאה לעסק – בלי תבניות מוכנות מראש
         </p>
       </li>
@@ -31,7 +31,7 @@ function ListBenefits() {
           color={'#F55274'}
           className="shrink-0 animate-pulse"
         />
-        <p className="text-size-brand-h5">חשיבה אסטרטגית, לא רק עיצוב</p>
+        <p className="text-textsizebrandh5">חשיבה אסטרטגית, לא רק עיצוב</p>
       </li>
       <li className="flex items-start justify-start gap-2">
         <Sparkle
@@ -39,7 +39,7 @@ function ListBenefits() {
           color={'#F55274'}
           className="shrink-0 animate-pulse"
         />
-        <p className="text-size-brand-h5">
+        <p className="text-textsizebrandh5">
           אתר שנבנה עם מטרה ברורה - לייצר לך פניות או כל מטרה עסקית שנקבע באפיון
         </p>
       </li>
@@ -49,7 +49,7 @@ function ListBenefits() {
           color={'#F55274'}
           className="shrink-0 animate-pulse"
         />
-        <p className="text-size-brand-h5">
+        <p className="text-textsizebrandh5">
           שקיפות, זמינות וליווי גם אחרי העלייה לאוויר
         </p>
       </li>
@@ -59,7 +59,7 @@ function ListBenefits() {
           color={'#F55274'}
           className="shrink-0 animate-pulse"
         />
-        <p className="text-size-brand-h5">
+        <p className="text-textsizebrandh5">
           גישה בגובה העיניים - אולי כלי העבודה שלי מסובכים, אבל לך אני משפט את
           הכל{' '}
         </p>

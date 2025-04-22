@@ -21,7 +21,7 @@ function Step({ icon, secondaryTitle, stage, text, title }: StepProps) {
           type: 'spring',
         }}
         id="card"
-        className="border-color-brand-purple-500-light shadow-color-brand-purple-500-light flex flex-col gap-4 rounded-2xl border-6 px-8 py-10 shadow-md lg:w-10/12"
+        className="border-color-brand-purple-500-light shadow-color-brand-purple-500-light border-6 flex flex-col gap-4 rounded-2xl px-8 py-10 shadow-md lg:w-10/12"
       >
         <div
           id="top"
@@ -39,16 +39,14 @@ function Step({ icon, secondaryTitle, stage, text, title }: StepProps) {
           >
             {icon}
           </motion.span>
-          <div className="leading-none font-black">
-            <h4 className="text-size-brand-h5">{stage}</h4>
-            <h5 className="text-size-brand-h3">{title}</h5>
-            <p className="text-color-brand-pink-500-dark mt-2">
-              {secondaryTitle}
-            </p>
+          <div className="font-black leading-none">
+            <h4 className="text-textsizebrandh5">{stage}</h4>
+            <h5 className="text-textsizebrandh3">{title}</h5>
+            <p className="text-colorBrandPink500dark mt-2">{secondaryTitle}</p>
           </div>
         </div>
         <div id="bottom">
-          <p className="text-size-brand-h6 w-full leading-snug lg:w-8/12">
+          <p className="text-textsizebrandh6 w-full leading-snug lg:w-8/12">
             {text}
           </p>
         </div>
@@ -57,7 +55,7 @@ function Step({ icon, secondaryTitle, stage, text, title }: StepProps) {
         whileInView={{ rotate: '90deg' }}
         transition={{ duration: 1, type: 'spring' }}
       >
-        <StepForward className="text-color-brand-pink-500-dark size-16 lg:size-16" />
+        <StepForward className="text-colorBrandPink500dark size-16 lg:size-16" />
       </motion.span>
     </>
   );

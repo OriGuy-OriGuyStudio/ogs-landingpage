@@ -51,15 +51,15 @@ const PainCTA = ({ ref, setShowTitles }: PainCTAProps) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="bg-color-brand-whiteYellow-100-light border-color-brand-pink-500-dark text-color-brand-gray-800-dark flex h-fit w-fit flex-col items-center justify-center rounded-4xl rounded-tr-[100px] border-4 p-8 text-center leading-none shadow-2xl sm:items-center sm:justify-center sm:text-center"
+      className="bg-colorBrandWhiteYellow100light border-colorBrandPink500dark text-colorBrandGray800dark rounded-4xl flex h-fit w-fit flex-col items-center justify-center rounded-tr-[100px] border-4 p-8 text-center leading-none shadow-2xl sm:items-center sm:justify-center sm:text-center"
     >
-      <p className="text-size-brand-h1 text-color-brand-purple-500-light font-black">
+      <p className="text-textsizebrandh1 text-colorBrandPurple500light font-black">
         אם
       </p>
-      <p className="text-size-brand-h3 font-black">הלקוח לא</p>
-      <p className="text-size-brand-h4 inline-flex items-center justify-center gap-2 font-black whitespace-nowrap">
+      <p className="text-textsizebrandh3 font-black">הלקוח לא</p>
+      <p className="text-textsizebrandh4 inline-flex items-center justify-center gap-2 whitespace-nowrap font-black">
         מבין תוך
-        <span className="text-size-brand-h1 text-color-brand-purple-500-light inline-flex flex-col">
+        <span className="text-textsizebrandh1 text-colorBrandPurple500light inline-flex flex-col">
           <motion.span
             key={count}
             initial={{ opacity: 0, scaleX: 0.4 }}
@@ -70,14 +70,14 @@ const PainCTA = ({ ref, setShowTitles }: PainCTAProps) => {
           >
             {count}
           </motion.span>
-          <span className="text-color-brand-pink-500-dark text-size-brand-p">
+          <span className="text-colorBrandPink500dark text-textsizebrandp">
             שניות
           </span>
         </span>
         מה אתם
       </p>
-      <p className="text-size-brand-h2 font-black">מציעים</p>
-      <p className="text-size-brand-h1 text-color-brand-red-400-light font-black whitespace-nowrap">
+      <p className="text-textsizebrandh2 font-black">מציעים</p>
+      <p className="text-textsizebrandh1 text-colorBrandRed400light whitespace-nowrap font-black">
         איבדתם אותו
       </p>
     </motion.div>

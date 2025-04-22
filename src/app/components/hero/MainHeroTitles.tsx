@@ -8,11 +8,11 @@ interface MainHeroTitlesProps {
 const MainHeroTitles = ({ mainText, colorText }: MainHeroTitlesProps) => {
   const textToScale = useRef<HTMLSpanElement>(null);
   return (
-    <h1 className="text-size-brand-h2 sm:text-size-brand-h1 text-color-brand-whiteYellow-100-light mb-2 leading-none font-black text-balance">
+    <h1 className="text-textsizebrandh3 sm:text-textsizebrandh1 text-colorBrandWhiteYellow100light mb-2 text-balance font-black leading-none">
       {mainText} <br />
       <span
         ref={textToScale}
-        className="magnify-container text-color-brand-pink-500-dark sm:text-size-brand-h1 relative inline-block w-fit font-black text-pretty"
+        className="magnify-container text-colorBrandPink500dark sm:text-textsizebrandh1 relative inline-block w-fit text-pretty font-black"
       >
         &quot;{colorText}&quot;
       </span>

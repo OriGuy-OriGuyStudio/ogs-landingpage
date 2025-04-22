@@ -73,7 +73,7 @@ function ContactMeForm() {
         onSubmit={formik.handleSubmit}
       >
         <div className="flex flex-col items-start justify-start gap-2 text-right">
-          <label className="text-size-brand-h6 font-extrabold" htmlFor="text">
+          <label className="text-textsizebrandh6 font-extrabold" htmlFor="text">
             שם מלא
           </label>
           <input
@@ -84,17 +84,17 @@ function ContactMeForm() {
             onBlur={formik.handleBlur}
             value={formik.values.name}
             id="name"
-            className="bg-color-brand-cyan-200-light text-color-brand-purple-900-dark h-10 w-full rounded-lg px-4"
+            className="bg-colorBrandCyan200light text-colorBrandPurple900dark h-10 w-full rounded-lg px-2"
           />
           {formik.errors.name && formik.touched.name ? (
-            <div className="text-size-brand-h6 text-color-brand-red-400-light font-black">
+            <div className="text-textsizebrandh6 text-colorBrandRed400light font-black">
               {formik.errors.name}
             </div>
           ) : null}
         </div>
 
         <div className="flex flex-col items-start justify-start gap-2 text-right">
-          <label className="text-size-brand-h6 font-extrabold" htmlFor="tel">
+          <label className="text-textsizebrandh6 font-extrabold" htmlFor="tel">
             טלפון לחזרה
           </label>
           <input
@@ -105,16 +105,19 @@ function ContactMeForm() {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.tel}
-            className="bg-color-brand-cyan-200-light text-color-brand-purple-900-dark h-10 w-full rounded-lg px-4 text-right"
+            className="bg-colorBrandCyan200light text-colorBrandPurple900dark h-10 w-full rounded-lg px-2 text-right"
           />
           {formik.errors.tel && formik.touched.tel ? (
-            <div className="text-size-brand-h6 text-color-brand-red-400-light font-black">
+            <div className="text-textsizebrandh6 text-colorBrandRed400light font-black">
               {formik.errors.tel}
             </div>
           ) : null}
         </div>
         <div className="flex flex-col items-start justify-start gap-2 text-right">
-          <label className="text-size-brand-h6 font-extrabold" htmlFor="email">
+          <label
+            className="text-textsizebrandh6 font-extrabold"
+            htmlFor="email"
+          >
             מייל, מבטיח לא פרסומי
           </label>
           <input
@@ -125,10 +128,10 @@ function ContactMeForm() {
             onBlur={formik.handleBlur}
             value={formik.values.email}
             id="email"
-            className="bg-color-brand-cyan-200-light text-color-brand-purple-900-dark h-10 w-full rounded-lg px-4"
+            className="bg-colorBrandCyan200light text-colorBrandPurple900dark h-10 w-full rounded-lg px-2"
           />
           {formik.errors.email && formik.touched.email ? (
-            <div className="text-size-brand-h6 text-color-brand-red-400-light font-black">
+            <div className="text-textsizebrandh6 text-colorBrandRed400light font-black">
               {formik.errors.email}
             </div>
           ) : null}
@@ -138,7 +141,7 @@ function ContactMeForm() {
           whileHover={{ scale: 1.05, rotate: '2.5deg' }}
           whileTap={{ scale: 0.95, rotate: '-2.5deg' }}
           transition={{ duration: 0.5, ease: 'backOut' }}
-          className="text-size-brand-h6 bg-color-brand-pink-500-dark mt-4 flex w-2/4 flex-row items-center justify-center gap-2 rounded-xl px-4 py-2 font-black lg:w-2/4"
+          className="text-textsizebrandh6 bg-colorBrandPink500dark mt-4 flex w-2/4 flex-row items-center justify-center gap-2 rounded-xl px-2 py-2 font-black lg:w-2/4"
           type="submit"
         >
           אורי, דבר איתי{' '}
@@ -154,7 +157,7 @@ function ContactMeForm() {
     );
   } else {
     return (
-      <div className="mt-8 flex flex-col items-start justify-start gap-4 text-right font-black text-pretty lg:mt-8 lg:w-3/4 lg:items-start lg:justify-start lg:text-right">
+      <div className="mt-8 flex flex-col items-start justify-start gap-4 text-pretty text-right font-black lg:mt-8 lg:w-3/4 lg:items-start lg:justify-start lg:text-right">
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
           width="100"
@@ -235,7 +238,7 @@ function ContactMeForm() {
             scale: 1,
           }}
           transition={{ duration: 1, delay: 1 }}
-          className="text-size-brand-h3 text-color-brand-pink-500-dark"
+          className="text-textsizebrandh3 text-colorBrandPink500dark"
         >
           עשיתם את הצעד הראשון לעבר אתר מדהים !
         </motion.p>
@@ -250,10 +253,10 @@ function ContactMeForm() {
           }}
           transition={{ duration: 1, delay: 1 }}
         >
-          <p className="text-size-brand-h6 font-medium">
+          <p className="text-textsizebrandh6 font-medium">
             תוך 24 שעות אני אצור אתכם קשר
           </p>
-          <p className="text-size-brand-h6 font-medium">
+          <p className="text-textsizebrandh6 font-medium">
             רוצים לדבר איתי לפני? פשוט תגיבו להודעה שתקבלו ממני
           </p>
         </motion.div>

@@ -44,8 +44,8 @@ function StepByStep() {
   ];
 
   return (
-    <div className="bg-color-brand-purple-900-dark flex flex-col items-center justify-center py-20">
-      <span className="text-size-brand-h1 text-color-brand-whiteYellow-100-light text-center leading-none font-black">
+    <div className="bg-colorBrandPurple900dark flex flex-col items-center justify-center py-20">
+      <span className="text-textsizebrandh1 text-colorBrandWhiteYellow100light text-center font-black leading-none">
         <h3>איך זה עובד בפועל?</h3>
         <h3> שלב אחרי שלב </h3>
         <h3>בלי סיבוכים</h3>
@@ -64,7 +64,7 @@ function StepByStep() {
           );
         })}
       </div>
-      <div className="text-size-brand-h4 mt-8 text-center leading-none font-black">
+      <div className="text-textsizebrandh4 mt-8 text-center font-black leading-none">
         <p>אתם לא צריכים להבין בטכנולוגיה,</p>
         <motion.p
           initial={{ letterSpacing: 0 }}
@@ -74,7 +74,7 @@ function StepByStep() {
             repeatType: 'reverse',
             duration: 1,
           }}
-          className="text-color-brand-pink-500-dark"
+          className="text-colorBrandPink500dark"
         >
           אני כבר דואג להכל.
         </motion.p>
@@ -87,7 +87,7 @@ function StepByStep() {
             repeatType: 'reverse',
             duration: 1,
           }}
-          className="text-color-brand-pink-500-dark"
+          className="text-colorBrandPink500dark"
         >
           ואני דואג שהאתר יעבוד 24/7.
         </motion.p>

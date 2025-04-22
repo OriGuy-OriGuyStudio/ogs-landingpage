@@ -46,16 +46,16 @@ const ProblemsSection = ({ scrollYProgress }: ProblemsSectionProps) => {
   });
 
   return (
-    <div className="bg-color-brand-purple-900-dark z-4 grid h-screen w-full grid-cols-1 px-4 md:px-20 lg:flex lg:flex-row lg:items-center lg:justify-center lg:gap-8">
-      <h2 className="text-color-brand-whiteYellow-100-light text-size-brand-h2 mb-8 flex flex-col items-start justify-end text-right leading-none font-black md:mx-auto md:w-5/8 md:items-center md:text-center lg:w-3/8 lg:items-start lg:text-right">
+    <div className="bg-colorBrandPurple900dark z-4 grid h-screen w-full grid-cols-1 px-2 md:px-20 lg:flex lg:flex-row lg:items-center lg:justify-center lg:gap-8">
+      <h2 className="text-colorBrandWhiteYellow100light text-textsizebrandh2 md:w-5/8 lg:w-3/8 mb-8 flex flex-col items-start justify-end text-right font-black leading-none md:mx-auto md:items-center md:text-center lg:items-start lg:text-right">
         האם אחד המשפטים האלה מוכר לכם ?{' '}
-        <span className="text-color-brand-pink-500-dark text-size-brand-h1 lg:items-right block font-black">
+        <span className="text-colorBrandPink500dark text-textsizebrandh1 lg:items-right block font-black">
           אתם.ן לא לבד
         </span>
       </h2>
       <motion.div
         id="texts"
-        className="no-scrollbar h-fit w-full flex-col items-start justify-start overflow-y-scroll text-right leading-none text-pretty md:items-center md:justify-center md:text-center lg:flex lg:w-2/4 lg:items-start lg:text-right"
+        className="no-scrollbar h-fit w-full flex-col items-start justify-start overflow-y-scroll text-pretty text-right leading-none md:items-center md:justify-center md:text-center lg:flex lg:w-2/4 lg:items-start lg:text-right"
         key={currentText}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

@@ -57,7 +57,7 @@ const HeroSection = ({ scrollYProgress }: HeroSectionProps) => {
   return (
     <motion.section
       style={{ scale, rotate }}
-      className="text-color-brand-whiteYellow-100-light bg-color-brand-purple-900-dark sticky top-0 z-0 flex h-screen origin-center flex-col items-center justify-center px-4 text-center leading-none sm:items-center sm:justify-center sm:px-20 sm:text-center"
+      className="text-colorBrandWhiteYellow100light bg-colorBrandPurple900dark sticky top-0 z-0 flex h-screen origin-center flex-col items-center justify-center px-2 text-center font-sans leading-none sm:items-center sm:justify-center sm:px-20 sm:text-center"
     >
       <PromotionBanner textBottom={texts.promotionTextUnder} />
       <BluredBgColors />
@@ -88,7 +88,7 @@ const HeroSection = ({ scrollYProgress }: HeroSectionProps) => {
           <HeroButton text={texts.button} />
         </motion.div>
 
-        <motion.p variants={itemVariants} className="text-size-brand-p">
+        <motion.p variants={itemVariants} className="text-textsizebrandp">
           {texts.textUnderButton}
         </motion.p>
       </motion.div>

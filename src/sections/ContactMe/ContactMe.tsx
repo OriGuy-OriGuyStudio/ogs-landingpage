@@ -6,18 +6,18 @@ import React from 'react';
 
 function ContactMe() {
   return (
-    <div className="bg-color-brand-purple-900-dark bottom-0 h-screen px-4 py-20 sm:px-20">
-      <div className="lg:text-size-brand-h1 text-size-brand-h2 leading-none font-black">
+    <div className="bg-colorBrandPurple900dark bottom-0 h-screen px-2 py-20 sm:px-20">
+      <div className="lg:text-textsizebrandh1 text-textsizebrandh2 font-black leading-none">
         <h6>הגעתם עד לכאן?</h6>
         <h6>יאללה, זה הזמן לעבוד כמו שצריך !</h6>
-        <p className="text-size-brand-h5 text-color-brand-pink-500-dark">
+        <p className="text-textsizebrandh5 text-colorBrandPink500dark">
           בחרו מה שנוח לכם, ואני אדאג לשאר
         </p>
       </div>
       <div className="mt-8 flex flex-col gap-16 lg:flex-row">
         <div className="leading-none">
-          <h4 className="text-size-brand-h3 font-black">שונאים טפסים?</h4>
-          <h5 className="text-size-brand-h3 font-black">שלחו לי הודעה</h5>
+          <h4 className="text-textsizebrandh3 font-black">שונאים טפסים?</h4>
+          <h5 className="text-textsizebrandh3 font-black">שלחו לי הודעה</h5>
           <div className="mt-4 space-y-4">
             <div className="flex flex-row items-center gap-4">
               <Image
@@ -28,7 +28,7 @@ function ContactMe() {
                 className="size-8 lg:size-10"
               />
               <a
-                className="text-size-brand-h5 font-normal"
+                className="text-textsizebrandh5 font-normal"
                 href="https://wa.me/message/BAPSKBNTSV6GA1"
               >
                 {' '}
@@ -38,7 +38,7 @@ function ContactMe() {
             <div className="flex flex-row items-center gap-4">
               <AtSign size={40} className="size-8 lg:size-10" />
               <a
-                className="text-size-brand-h5 font-normal"
+                className="text-textsizebrandh5 font-normal"
                 href="mailto:origuy@origuystudio.com"
               >
                 {' '}
@@ -48,8 +48,8 @@ function ContactMe() {
           </div>
         </div>
         <div className="leading-none lg:w-5/12">
-          <h4 className="text-size-brand-h3 font-black">שונאים טפסים?</h4>
-          <h5 className="text-size-brand-h3 font-black">שלחו לי הודעה</h5>
+          <h4 className="text-textsizebrandh3 font-black">שונאים טפסים?</h4>
+          <h5 className="text-textsizebrandh3 font-black">שלחו לי הודעה</h5>
           <div className="mt-4 space-y-4">
             <ContactMeForm />
           </div>

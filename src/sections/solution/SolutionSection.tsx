@@ -137,7 +137,7 @@ const SolutionSection = ({ scrollYProgress }: SolutionSectionProps) => {
   });
 
   return (
-    <div className="bg-color-brand-green-500-medium text-color-brand-gray-800-dark grid h-screen grid-cols-1 grid-rows-2 gap-4 px-4 md:px-20">
+    <div className="bg-colorBrandGreen500medium text-colorBrandGray800dark grid h-screen grid-cols-1 grid-rows-2 gap-4 px-2 md:px-20">
       <div
         className="bg-color-brand-green-200-light pointer-events-none absolute z-10 size-80 rounded-full opacity-80 blur-[100px] sm:blur-[200px] md:size-[36rem]"
         style={{ top: '-210px', left: '29%' }}
@@ -147,10 +147,10 @@ const SolutionSection = ({ scrollYProgress }: SolutionSectionProps) => {
         style={{ scale }}
         className="items-right z-10 mb-4 flex flex-col justify-end text-right md:items-center md:text-center"
       >
-        <h3 className="text-size-brand-h1 leading-none font-black">
+        <h3 className="text-textsizebrandh1 font-black leading-none">
           הגיע הזמן לעשות
         </h3>
-        <h3 className="text-size-brand-h1 text-color-brand-purple-500-light leading-none font-black">
+        <h3 className="text-textsizebrandh1 text-colorBrandPurple500light font-black leading-none">
           את זה כמו שצריך
         </h3>
         {/* <p>{scrollYProgress.get()}</p> */}
@@ -166,8 +166,8 @@ const SolutionSection = ({ scrollYProgress }: SolutionSectionProps) => {
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center justify-center text-center"
         >
-          <p className="text-size-brand-h5 flex-start text-background flex h-fit flex-col gap-2 text-right leading-snug font-medium text-pretty whitespace-pre-wrap md:text-center lg:items-center">
-            <span className="text-size-brand-h4 flex flex-row items-center justify-start gap-4 font-extrabold">
+          <p className="text-textsizebrandh5 flex-start text-background flex h-fit flex-col gap-2 whitespace-pre-wrap text-pretty text-right font-medium leading-snug md:text-center lg:items-center">
+            <span className="text-textsizebrandh4 flex flex-row items-center justify-start gap-4 font-extrabold">
               {solutionTexts[currentTextIndex].icon}{' '}
               {solutionTexts[currentTextIndex].title}
             </span>
