@@ -1,8 +1,7 @@
-'use client';
 import type { Metadata } from 'next';
 import './globals.css';
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: 'הלקוחות שלך יגידו: זה בדיוק מה שחיפשתי',
   description: 'פותח על ידי סטודיו אורי גיא',
 };
