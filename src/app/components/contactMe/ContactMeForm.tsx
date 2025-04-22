@@ -45,7 +45,7 @@ function ContactMeForm() {
         spread: 100,
         origin: { y: 0.8 },
       });
-      await axios.post(process.env.MAKE_URL, {
+      await axios.post(process.env.MAKE_URL || '', {
         name: values.name,
         tel: values.tel,
         email: values.email,
