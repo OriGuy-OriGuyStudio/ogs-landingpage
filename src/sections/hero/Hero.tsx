@@ -59,10 +59,7 @@ const HeroSection = ({ scrollYProgress }: HeroSectionProps) => {
       style={{ scale, rotate }}
       className="text-color-brand-whiteYellow-100-light bg-color-brand-purple-900-dark sticky top-0 z-0 flex h-screen origin-center flex-col items-center justify-center px-4 text-center leading-none sm:items-center sm:justify-center sm:px-20 sm:text-center"
     >
-      <PromotionBanner
-        textTop={texts.promotion}
-        textBottom={texts.promotionTextUnder}
-      />
+      <PromotionBanner textBottom={texts.promotionTextUnder} />
       <BluredBgColors />
 
       <motion.div
