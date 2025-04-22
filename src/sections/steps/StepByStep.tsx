@@ -1,3 +1,4 @@
+'use client';
 import Step, { StepProps } from '@/app/components/steps/Step';
 import { Code, ListTodo, PhoneCall, Rocket, SplinePointer } from 'lucide-react';
 import { motion } from 'motion/react';

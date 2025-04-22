@@ -1,3 +1,4 @@
+'use client';
 import textsChanges from '@/types/TextsChanges';
 
 interface TextsChangeOnScrollProps {

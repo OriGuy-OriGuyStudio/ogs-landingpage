@@ -1,3 +1,4 @@
+'use client';
 import HeroButton from '@/app/components/hero/HeroButton';
 import { Braces, Handshake, Target } from 'lucide-react';
 import { MotionValue } from 'motion';

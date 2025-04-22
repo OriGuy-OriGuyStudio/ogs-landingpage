@@ -1,3 +1,4 @@
+'use client';
 import ContactMeForm from '@/app/components/contactMe/ContactMeForm';
 import { AtSign } from 'lucide-react';
 import Image from 'next/image';

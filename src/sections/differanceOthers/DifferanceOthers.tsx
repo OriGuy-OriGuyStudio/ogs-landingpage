@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import DiffTitles from '@/app/components/differance/DiffTitles';
 import ListBenefits from '../../app/components/differance/ListBenefits';

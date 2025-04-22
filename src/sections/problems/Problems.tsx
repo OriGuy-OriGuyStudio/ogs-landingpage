@@ -1,3 +1,4 @@
+'use client';
 import textsChanges from '@/types/TextsChanges';
 import { motion, MotionValue, useMotionValueEvent } from 'motion/react';
 import { useState } from 'react';
