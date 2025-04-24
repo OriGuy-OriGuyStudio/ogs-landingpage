@@ -6,13 +6,21 @@ import PainSection from '@/sections/pain/PainSection';
 import ProblemsSection from '@/sections/problems/Problems';
 import SolutionSection from '@/sections/solution/SolutionSection';
 import { useScroll } from 'motion/react';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function Home() {
   const container = useRef<HTMLDivElement>(null);
   const painSectionRef = useRef<HTMLDivElement>(null);
   const problemSectionRef = useRef<HTMLDivElement>(null);
   const solutionSectionRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = (await import('locomotive-scroll')).default;
+      const locomotiveScroll = new LocomotiveScroll();
+
+      console.log(locomotiveScroll);
+    })();
+  }, []);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ['start start', 'end end'],

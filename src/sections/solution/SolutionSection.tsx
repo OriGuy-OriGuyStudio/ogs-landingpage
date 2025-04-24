@@ -5,6 +5,7 @@ import { MotionValue } from 'motion';
 import { motion, useMotionValueEvent, useTransform } from 'motion/react';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import JSConfetti from 'js-confetti';
 
 interface SolutionSectionProps {
   scrollYProgress: MotionValue<number>;
@@ -87,19 +88,14 @@ const SolutionSection = ({ scrollYProgress }: SolutionSectionProps) => {
       ),
       description:
         'התהליך פשוט, אישי, מקצועי, בלי כאבי ראש וטרטור בין ספקים שונים.\nאתם מתמקדים במה שאתם עושים הכי טוב ואני דואג שהאתר יעבוד בשבילם.',
-      button: (
-        <a
-          href="https://wa.me/message/BAPSKBNTSV6GA1"
-          className="mt-4 inline-block"
-        >
-          <HeroButton text={'בואו נעשה את זה כמו שצריך'} />
-        </a>
-      ),
+      button: <HeroButton text={'בואו נעשה את זה כמו שצריך'} />,
     },
   ];
-  const [hasShownConfetti, setHasShownConfetti] = useState(false);
+  // const [hasShownConfetti, setHasShownConfetti] = useState(false);
   // Listen for scroll progress changes and update the text + trigger confetti
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+    const jsConfetti = new JSConfetti();
+
     // Text changing logic
     if (latest < 0.25) {
       setCurrentTextIndex(0);
@@ -113,37 +109,22 @@ const SolutionSection = ({ scrollYProgress }: SolutionSectionProps) => {
 
     // Trigger confetti when the section first becomes visible
     // and we haven't shown it yet
-    if (latest > 0.05 && latest < 0.2 && !hasShownConfetti) {
-      setHasShownConfetti(true);
+    if (latest > 0 && latest < 0.06) {
+      // setHasShownConfetti(true);
 
       // Set up confetti colors and options
       const colors = ['#3521AB', '#F55274'];
-
-      // Left side confetti
-      confetti({
-        particleCount: 5,
-        angle: 60,
-        spread: 25,
-        origin: { x: 0, y: 0.5 },
-        colors: colors,
-        startVelocity: 30,
-        gravity: 0.5,
-        ticks: 100,
-      });
-
-      // Right side confetti
-      confetti({
-        particleCount: 5,
-        angle: 120,
-        spread: 25,
-        origin: { x: 1, y: 0.5 },
-        colors: colors,
-        startVelocity: 30,
-        gravity: 0.5,
-        ticks: 100,
+      jsConfetti.addConfetti({
+        confettiColors: ['#3521AB', '#F55274'],
+        confettiRadius: 6,
+        confettiNumber: 25,
       });
     }
-    setHasShownConfetti(false);
+    // setHasShownConfetti(false);
+    //
+    setTimeout(() => {
+      jsConfetti.clearCanvas();
+    }, 2500);
   });
 
   return (
