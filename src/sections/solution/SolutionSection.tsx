@@ -113,7 +113,7 @@ const SolutionSection = ({ scrollYProgress }: SolutionSectionProps) => {
 
     // Trigger confetti when the section first becomes visible
     // and we haven't shown it yet
-    if (latest > 0.05 && latest < 0.25 && !hasShownConfetti) {
+    if (latest > 0.05 && latest < 0.2 && !hasShownConfetti) {
       setHasShownConfetti(true);
 
       // Set up confetti colors and options
@@ -123,7 +123,7 @@ const SolutionSection = ({ scrollYProgress }: SolutionSectionProps) => {
       confetti({
         particleCount: 5,
         angle: 60,
-        spread: 55,
+        spread: 25,
         origin: { x: 0, y: 0.5 },
         colors: colors,
         startVelocity: 30,
@@ -135,7 +135,7 @@ const SolutionSection = ({ scrollYProgress }: SolutionSectionProps) => {
       confetti({
         particleCount: 5,
         angle: 120,
-        spread: 55,
+        spread: 25,
         origin: { x: 1, y: 0.5 },
         colors: colors,
         startVelocity: 30,

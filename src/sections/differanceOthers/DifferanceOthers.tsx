@@ -15,7 +15,7 @@ function DifferanceOthers() {
         alt={'upRight'}
         width={20}
         height={20}
-        className="pointer-events-none absolute -top-48 -z-20 size-[40rem] place-self-center md:-top-28 lg:-top-32"
+        className="pointer-events-none absolute -top-48 -z-20 size-[32rem] place-self-center md:-top-28 lg:-top-32"
         // style={{ top: '-100px' }}
       />
       <section className="z-20 block w-full">
