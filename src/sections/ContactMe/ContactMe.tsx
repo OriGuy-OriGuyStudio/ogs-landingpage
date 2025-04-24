@@ -6,18 +6,18 @@ import React from 'react';
 
 function ContactMe() {
   return (
-    <div className="bg-colorBrandPurple900dark bottom-0 h-screen px-2 py-20 sm:px-20">
-      <div className="lg:text-textsizebrandh1 text-textsizebrandh2 font-black leading-none">
+    <div className="bottom-0 bg-colorBrandPurple900dark px-4 py-20 sm:px-20">
+      <div className="text-textsizebrandh3 font-black leading-none md:text-textsizebrandh1">
         <h6>הגעתם עד לכאן?</h6>
         <h6>יאללה, זה הזמן לעבוד כמו שצריך !</h6>
-        <p className="text-textsizebrandh5 text-colorBrandPink500dark">
+        <p className="mt-2 text-textsizebrandh4 text-colorBrandPink500dark">
           בחרו מה שנוח לכם, ואני אדאג לשאר
         </p>
       </div>
-      <div className="mt-8 flex flex-col gap-16 lg:flex-row">
+      <div className="mt-6 flex flex-col gap-8 lg:flex-row">
         <div className="leading-none">
-          <h4 className="text-textsizebrandh3 font-black">שונאים טפסים?</h4>
-          <h5 className="text-textsizebrandh3 font-black">שלחו לי הודעה</h5>
+          <h4 className="text-textsizebrandh4 font-black">שונאים טפסים?</h4>
+          <h5 className="text-textsizebrandh4 font-black">שלחו לי הודעה</h5>
           <div className="mt-4 space-y-4">
             <div className="flex flex-row items-center gap-4">
               <Image
@@ -47,14 +47,31 @@ function ContactMe() {
             </div>
           </div>
         </div>
+
+        <div className="border-2 border-colorBrandWhiteYellow100lightOpacity"></div>
+
         <div className="leading-none lg:w-5/12">
-          <h4 className="text-textsizebrandh3 font-black">שונאים טפסים?</h4>
-          <h5 className="text-textsizebrandh3 font-black">שלחו לי הודעה</h5>
+          <h4 className="text-textsizebrandh4 font-black">אוהבים טפסים?</h4>
+          <h5 className="text-textsizebrandh4 font-black">שלחו לי הודעה</h5>
           <div className="mt-4 space-y-4">
             <ContactMeForm />
           </div>
         </div>
       </div>
+      <a
+        href="http://origuystudio.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block"
+      >
+        <Image
+          src={'/fullLogoWhiteSVG.svg'}
+          width={72}
+          height={72}
+          alt={'studio ori guy'}
+          className="mx-auto mt-16"
+        />
+      </a>
     </div>
   );
 }

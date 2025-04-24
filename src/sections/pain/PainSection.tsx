@@ -21,13 +21,13 @@ const PainSection = ({ scrollYProgress, ref }: PainSectionProps) => {
       ref={ref}
       initial={{}}
       style={{ scale, rotate, opacity, borderRadius: roundedCorners }}
-      className="bg-colorBrandCyan200light relative flex h-screen flex-col items-center justify-center px-2 shadow-2xl sm:gap-6 sm:px-20"
+      className="relative flex h-screen flex-col items-center justify-center bg-colorBrandCyan200light px-4 shadow-2xl sm:gap-6 sm:px-20"
     >
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="text-textsizebrandh4 sm:text-textsizebrandh3 text-colorBrandGray800dark mt-8 flex w-fit flex-col items-center justify-center text-center font-extrabold leading-none"
+        className="mt-8 flex w-fit flex-col items-center justify-center text-center text-textsizebrandh4 font-extrabold leading-none text-colorBrandGray800dark sm:text-textsizebrandh3"
       >
         <PainCTA ref={ref} setShowTitles={setShowTitles} />
         <PainTitles showTitles={showTitles} />

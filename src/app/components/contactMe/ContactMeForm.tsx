@@ -84,10 +84,10 @@ function ContactMeForm() {
             onBlur={formik.handleBlur}
             value={formik.values.name}
             id="name"
-            className="bg-colorBrandCyan200light text-colorBrandPurple900dark h-10 w-full rounded-lg px-2"
+            className="h-10 w-full rounded-lg bg-colorBrandCyan200light px-2 text-colorBrandPurple900dark"
           />
           {formik.errors.name && formik.touched.name ? (
-            <div className="text-textsizebrandh6 text-colorBrandRed400light font-black">
+            <div className="text-textsizebrandh6 font-black text-colorBrandRed400light">
               {formik.errors.name}
             </div>
           ) : null}
@@ -105,19 +105,16 @@ function ContactMeForm() {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.tel}
-            className="bg-colorBrandCyan200light text-colorBrandPurple900dark h-10 w-full rounded-lg px-2 text-right"
+            className="h-10 w-full rounded-lg bg-colorBrandCyan200light px-2 text-right text-colorBrandPurple900dark"
           />
           {formik.errors.tel && formik.touched.tel ? (
-            <div className="text-textsizebrandh6 text-colorBrandRed400light font-black">
+            <div className="text-textsizebrandp font-black text-colorBrandRed400light">
               {formik.errors.tel}
             </div>
           ) : null}
         </div>
         <div className="flex flex-col items-start justify-start gap-2 text-right">
-          <label
-            className="text-textsizebrandh6 font-extrabold"
-            htmlFor="email"
-          >
+          <label className="text-textsizebrandp font-extrabold" htmlFor="email">
             מייל, מבטיח לא פרסומי
           </label>
           <input
@@ -128,20 +125,21 @@ function ContactMeForm() {
             onBlur={formik.handleBlur}
             value={formik.values.email}
             id="email"
-            className="bg-colorBrandCyan200light text-colorBrandPurple900dark h-10 w-full rounded-lg px-2"
+            className="h-10 w-full rounded-lg bg-colorBrandCyan200light px-2 text-colorBrandPurple900dark"
           />
           {formik.errors.email && formik.touched.email ? (
-            <div className="text-textsizebrandh6 text-colorBrandRed400light font-black">
+            <div className="text-textsizebrandp font-black text-colorBrandRed400light">
               {formik.errors.email}
             </div>
           ) : null}
         </div>
 
         <motion.button
-          whileHover={{ scale: 1.05, rotate: '2.5deg' }}
-          whileTap={{ scale: 0.95, rotate: '-2.5deg' }}
-          transition={{ duration: 0.5, ease: 'backOut' }}
-          className="text-textsizebrandh6 bg-colorBrandPink500dark mt-4 flex w-2/4 flex-row items-center justify-center gap-2 rounded-xl px-2 py-2 font-black lg:w-2/4"
+          initial={{ scale: 1 }}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 1, type: 'spring' }}
+          whileTap={{ scale: 0.95, rotate: -1, transition: { duration: 0.12 } }}
+          className="mt-4 flex w-2/4 flex-row items-center justify-center gap-2 rounded-xl bg-colorBrandPink500dark px-2 py-2 text-textsizebrandh6 font-black lg:w-2/4"
           type="submit"
         >
           אורי, דבר איתי{' '}

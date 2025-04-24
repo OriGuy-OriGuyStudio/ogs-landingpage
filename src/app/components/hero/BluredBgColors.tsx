@@ -8,15 +8,15 @@ const BluredBgColors = () => {
         style={{ top: '-10%', left: '-10%' }}
       /> */}
       <Image
-        src={'/upLeft.png'}
+        src={'/purpleTL.svg'}
         alt={'upLeft'}
         width={64}
         height={64}
-        className="pointer-events-none absolute -z-50 md:size-[36rem]"
+        className="pointer-events-none absolute -z-50 size-96 md:size-[36rem]"
         style={{ top: '0', left: '0' }}
       />
       <Image
-        src={'/upRight.png'}
+        src={'/pinkTR.svg'}
         alt={'upRight'}
         width={20}
         height={20}
@@ -24,7 +24,7 @@ const BluredBgColors = () => {
         style={{ top: '0', right: '0' }}
       />
       <Image
-        src={'/downLeft.png'}
+        src={'/pinkBL.svg'}
         alt={'downLeft'}
         width={20}
         height={20}
@@ -32,11 +32,11 @@ const BluredBgColors = () => {
         style={{ bottom: '0', left: '0' }}
       />
       <Image
-        src={'/downRight.png'}
+        src={'/purpleBR.svg'}
         alt={'downRight'}
         width={20}
         height={20}
-        className="pointer-events-none absolute -z-50 size-80 md:size-[36rem]"
+        className="pointer-events-none absolute -z-50 size-96 md:size-[36rem]"
         style={{ bottom: '0', right: '0' }}
       />
       {/* <div

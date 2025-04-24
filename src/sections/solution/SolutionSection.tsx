@@ -36,7 +36,7 @@ const SolutionSection = ({ scrollYProgress }: SolutionSectionProps) => {
           className="inline-block"
         >
           <Braces
-            className="inline-block size-[40px] lg:size-[64px]"
+            className="inline-block size-[40px] lg:size-[48px]"
             color="#f55274"
           />
         </motion.span>
@@ -57,7 +57,10 @@ const SolutionSection = ({ scrollYProgress }: SolutionSectionProps) => {
           }}
           className="inline-block"
         >
-          <Target className="size-[40px] lg:size-[64px]" color="#f55274" />
+          <Target
+            className="inline-block size-[40px] lg:size-[48px]"
+            color="#f55274"
+          />
         </motion.span>
       ),
       description:
@@ -76,15 +79,21 @@ const SolutionSection = ({ scrollYProgress }: SolutionSectionProps) => {
           }}
           className="inline-block"
         >
-          <Handshake className="size-[40px] lg:size-[64px]" color="#f55274" />
+          <Handshake
+            className="inline-block size-[40px] lg:size-[48px]"
+            color="#f55274"
+          />
         </motion.span>
       ),
       description:
         'התהליך פשוט, אישי, מקצועי, בלי כאבי ראש וטרטור בין ספקים שונים.\nאתם מתמקדים במה שאתם עושים הכי טוב ואני דואג שהאתר יעבוד בשבילם.',
       button: (
-        <span className="mt-4 inline-block animate-bounce">
+        <a
+          href="https://wa.me/message/BAPSKBNTSV6GA1"
+          className="mt-4 inline-block"
+        >
           <HeroButton text={'בואו נעשה את זה כמו שצריך'} />
-        </span>
+        </a>
       ),
     },
   ];
@@ -104,7 +113,7 @@ const SolutionSection = ({ scrollYProgress }: SolutionSectionProps) => {
 
     // Trigger confetti when the section first becomes visible
     // and we haven't shown it yet
-    if (latest > 0.05 && latest < 0.35 && !hasShownConfetti) {
+    if (latest > 0.05 && latest < 0.25 && !hasShownConfetti) {
       setHasShownConfetti(true);
 
       // Set up confetti colors and options
@@ -112,76 +121,72 @@ const SolutionSection = ({ scrollYProgress }: SolutionSectionProps) => {
 
       // Left side confetti
       confetti({
-        particleCount: 10,
+        particleCount: 5,
         angle: 60,
         spread: 55,
         origin: { x: 0, y: 0.5 },
         colors: colors,
         startVelocity: 30,
         gravity: 0.5,
-        ticks: 200,
+        ticks: 100,
       });
 
       // Right side confetti
       confetti({
-        particleCount: 10,
+        particleCount: 5,
         angle: 120,
         spread: 55,
         origin: { x: 1, y: 0.5 },
         colors: colors,
         startVelocity: 30,
         gravity: 0.5,
-        ticks: 200,
+        ticks: 100,
       });
     }
     setHasShownConfetti(false);
   });
 
   return (
-    <div className="grid h-screen grid-cols-1 grid-rows-2 gap-4 bg-colorBrandGreen500medium px-2 text-colorBrandGray800dark md:px-20">
+    <div className="flex h-screen flex-col items-center justify-center gap-2 text-balance rounded-3xl bg-colorBrandGreen500medium px-4 text-colorBrandGray800dark md:px-20">
       <Image
-        src={'/upRight.png'}
+        src={'/greenCT.svg'}
         alt={'upRight'}
         width={20}
         height={20}
-        className="pointer-events-none absolute -z-50 size-80 md:size-[36rem]"
-        style={{ top: '0', right: '0' }}
+        className="pointer-events-none absolute -top-16 size-80 place-self-center md:-top-28 md:size-[36rem] lg:-top-32"
+        // style={{ top: '-100px' }}
       />
-      {/* Header with scale animation */}
       <motion.div
         style={{ scale }}
-        className="items-right z-10 mb-4 flex flex-col justify-end text-right md:items-center md:text-center"
+        className="items-right z-10 mb-2 flex flex-col justify-end text-right md:items-center md:text-center"
       >
-        <h3 className="text-textsizebrandh1 font-black leading-none">
+        <h3 className="text-textsizebrandh2 font-black leading-none md:text-textsizebrandh1">
           הגיע הזמן לעשות
         </h3>
-        <h3 className="text-textsizebrandh1 font-black leading-none text-colorBrandPurple500light">
+        <h3 className="text-textsizebrandh2 font-black leading-none text-colorBrandPurple500light md:text-textsizebrandh1">
           את זה כמו שצריך
         </h3>
-        {/* <p>{scrollYProgress.get()}</p> */}
       </motion.div>
 
-      {/* Text container */}
-      <div className="relative mx-auto w-full max-w-2xl">
-        <motion.div
-          key={currentTextIndex}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col items-center justify-center text-center"
-        >
-          <p className="flex-start text-background flex h-fit flex-col gap-2 whitespace-pre-wrap text-pretty text-right text-textsizebrandh5 font-medium leading-snug md:text-center lg:items-center">
-            <span className="flex flex-row items-center justify-start gap-4 text-textsizebrandh4 font-extrabold">
-              {solutionTexts[currentTextIndex].icon}{' '}
-              {solutionTexts[currentTextIndex].title}
-            </span>
+      <motion.div
+        key={currentTextIndex}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex max-w-2xl flex-col items-center justify-start text-center lg:place-self-center"
+      >
+        <p className="flex-start text-background flex h-fit flex-col gap-2 whitespace-pre-wrap text-right text-textsizebrandh6 font-medium leading-snug md:text-center lg:items-center lg:justify-center">
+          <span className="flex flex-row items-center gap-2 text-textsizebrandh4 font-extrabold md:justify-center">
+            {solutionTexts[currentTextIndex].icon}{' '}
+            {solutionTexts[currentTextIndex].title}
+          </span>
 
-            {solutionTexts[currentTextIndex].description}
-            {solutionTexts[currentTextIndex].button}
-          </p>
-        </motion.div>
-      </div>
+          {solutionTexts[currentTextIndex].description}
+          {solutionTexts[currentTextIndex].button}
+        </p>
+      </motion.div>
+      {/* </div> */}
     </div>
   );
 };

@@ -10,30 +10,25 @@ import Image from 'next/image';
 
 function DifferanceOthers() {
   return (
-    <div className="bg-colorBrandPurple900dark sticky top-0 z-10 px-2 py-20 sm:px-20">
-      <DiffHighlight />
-      <section className="z-20">
+    <div className="relative z-50 grid w-full overflow-y-hidden rounded-3xl bg-colorBrandPurple900dark px-4 py-20 sm:px-20">
+      <Image
+        src={'/purpleCT.svg'}
+        alt={'upRight'}
+        width={20}
+        height={20}
+        className="pointer-events-none absolute -top-48 -z-20 size-[40rem] place-self-center md:-top-28 lg:-top-32"
+        // style={{ top: '-100px' }}
+      />
+      <section className="z-20 block w-full">
         <DiffTitles />
         <ul className="mt-4 flex w-full flex-col items-center justify-center gap-8 leading-snug lg:w-[100%] lg:flex-row lg:justify-between">
           <ListBenefits />
           <BenefitsImage />
         </ul>
       </section>
+
       <StepByStep />
       <ContactMe />
-      <a
-        href="http://origuystudio.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Image
-          src={'/fullLogoWhiteSVG.svg'}
-          width={72}
-          height={72}
-          alt={'studio ori guy'}
-          className="mx-auto"
-        />
-      </a>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import textsChanges from '@/types/TextsChanges';
 import { motion, MotionValue, useMotionValueEvent } from 'motion/react';
 import { useState } from 'react';
 import TextsChangeOnScroll from './TextsChangeOnScroll';
+import Image from 'next/image';
 
 interface ProblemsSectionProps {
   scrollYProgress: MotionValue<number>;
@@ -46,24 +47,34 @@ const ProblemsSection = ({ scrollYProgress }: ProblemsSectionProps) => {
   });
 
   return (
-    <div className="bg-colorBrandPurple900dark z-4 grid h-screen w-full grid-cols-1 px-2 md:px-20 lg:flex lg:flex-row lg:items-center lg:justify-center lg:gap-8">
-      <h2 className="text-colorBrandWhiteYellow100light text-textsizebrandh2 md:w-5/8 lg:w-3/8 mb-8 flex flex-col items-start justify-end text-right font-black leading-none md:mx-auto md:items-center md:text-center lg:items-start lg:text-right">
-        האם אחד המשפטים האלה מוכר לכם ?{' '}
-        <span className="text-colorBrandPink500dark text-textsizebrandh1 lg:items-right block font-black">
-          אתם.ן לא לבד
-        </span>
-      </h2>
-      <motion.div
-        id="texts"
-        className="no-scrollbar h-fit w-full flex-col items-start justify-start overflow-y-scroll text-pretty text-right leading-none md:items-center md:justify-center md:text-center lg:flex lg:w-2/4 lg:items-start lg:text-right"
-        key={currentText}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <TextsChangeOnScroll texts={texts[currentText]} />
-      </motion.div>
+    <div className="z-4 relative grid h-screen w-full bg-colorBrandPurple900dark px-4 md:px-20">
+      <Image
+        src={'/purpleCT.svg'}
+        alt={'upRight'}
+        width={20}
+        height={20}
+        className="pointer-events-none absolute -top-16 size-80 place-self-center md:-top-28 md:size-[36rem] lg:-top-32"
+        // style={{ top: '-100px' }}
+      />
+      <div className="flex h-screen w-full flex-col items-center justify-center gap-4 lg:flex-row lg:justify-evenly">
+        <h2 className="flex flex-col items-start justify-end text-balance text-right text-textsizebrandh2 font-black leading-none text-colorBrandWhiteYellow100light md:items-center md:text-center lg:items-start lg:text-right">
+          האם אחד המשפטים האלה מוכר לכם ?{' '}
+          <span className="lg:items-right inline-block text-textsizebrandh1 font-black text-colorBrandPink500dark">
+            אתם.ן לא לבד
+          </span>
+        </h2>
+        <motion.div
+          id="texts"
+          className="no-scrollbar w-full flex-col items-start justify-start overflow-y-scroll text-balance text-right leading-none md:items-center md:justify-center md:text-center lg:flex lg:items-start lg:text-right"
+          key={currentText}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <TextsChangeOnScroll texts={texts[currentText]} />
+        </motion.div>
+      </div>
     </div>
   );
 };

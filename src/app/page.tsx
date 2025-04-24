@@ -32,29 +32,31 @@ export default function Home() {
 
   return (
     <main ref={container} className="relative">
-      <section className="sticky top-0 z-0 h-screen w-full overflow-hidden">
+      <section className="sticky top-0 z-0 h-screen w-full overflow-hidden bg-transparent">
         <HeroSection scrollYProgress={scrollYProgress} />
       </section>
-      <section className="sticky top-0 z-1 h-screen w-full overflow-hidden">
+      <section className="z-1 sticky top-0 h-screen w-full overflow-hidden bg-transparent">
         <PainSection
           ref={painSectionRef}
           scrollYProgress={painScrollProgress}
         />
       </section>
       <div ref={problemSectionRef} className="relative h-[300vh]">
-        <section className="no-scrollbar sticky top-0 z-3 w-full overflow-x-hidden overflow-y-scroll rounded-3xl shadow-2xl">
+        <section className="no-scrollbar z-3 sticky top-0 w-full overflow-x-hidden overflow-y-scroll rounded-3xl bg-transparent shadow-2xl">
           <ProblemsSection scrollYProgress={problemScrollProgress} />
         </section>
       </div>
       <div ref={solutionSectionRef} className="relative h-[500vh]">
-        <section className="no-scrollbar sticky top-0 z-6 h-screen w-full overflow-x-hidden shadow-2xl">
+        <section className="no-scrollbar z-6 sticky top-0 h-screen w-full overflow-x-hidden bg-transparent shadow-2xl">
           <SolutionSection scrollYProgress={soltutionScrollProgress} />
         </section>
       </div>
-      <section className="no-scrollbar bg-color-brand-gray-800-dark sticky top-0 z-10 h-screen w-full overflow-x-hidden shadow-2xl">
+      <section className="no-scrollbar sticky top-0 z-10 h-screen w-full overflow-x-hidden bg-colorBrandGray800dark bg-transparent shadow-2xl">
         <DemoProjects />
       </section>
-      <DifferanceOthers />
+      <section className="no-scrollbar sticky top-0 z-10 w-full overflow-x-hidden shadow-2xl">
+        <DifferanceOthers />
+      </section>
     </main>
   );
 }

@@ -12,8 +12,9 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ scrollYProgress }: HeroSectionProps) => {
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.2]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, -4]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 2.5]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const rounded = useTransform(scrollYProgress, [0, 1], [0, 24]);
   const texts = {
     smallTitle: 'לאתר שלך יש תפקיד אחד:',
     mainTitle: 'לגרום לאנשים לעצור, להרגיש, ולהגיד',
@@ -56,8 +57,8 @@ const HeroSection = ({ scrollYProgress }: HeroSectionProps) => {
 
   return (
     <motion.section
-      style={{ scale, rotate }}
-      className="text-colorBrandWhiteYellow100light bg-colorBrandPurple900dark sticky top-0 z-0 flex h-screen origin-center flex-col items-center justify-center px-2 text-center font-sans leading-none sm:items-center sm:justify-center sm:px-20 sm:text-center"
+      style={{ scale, rotate, borderRadius: rounded }}
+      className="sticky top-0 z-0 flex h-screen origin-center flex-col items-center justify-center bg-colorBrandPurple900dark px-4 text-center font-sans leading-none text-colorBrandWhiteYellow100light sm:items-center sm:justify-center sm:px-20 sm:text-center"
     >
       <PromotionBanner textBottom={texts.promotionTextUnder} />
       <BluredBgColors />

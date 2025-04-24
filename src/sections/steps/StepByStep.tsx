@@ -7,35 +7,35 @@ import React from 'react';
 function StepByStep() {
   const data: StepProps[] = [
     {
-      icon: <PhoneCall className="size-8 lg:size-16" />,
+      icon: <PhoneCall className="size-10 md:size-10 lg:size-16" />,
       stage: 'שלב 1',
       title: 'שיחה קצרה להיכרות',
       secondaryTitle: 'קודם מדברים, לא ממלאים טפסים',
       text: 'נקיים פגישה טלפונית ראשונית. ,תספרו לי על העסק שלכם, נבין מה אתם צריכים ונבחן התאמה ראשונית לבניית אתר ביחד, לאחר מכן נתאם לנו שיחת אפיון מלאה בזום',
     },
     {
-      icon: <ListTodo className="size-8 lg:size-16" />,
+      icon: <ListTodo className="size-10 md:size-10 lg:size-16" />,
       stage: 'שלב 2',
       title: 'אפיון מדויק',
       secondaryTitle: 'עושים סדר לפני שמתחילים לבנות',
       text: 'פגישת האיפיון תתבצע בזום בצורה דיגיטלית כך שאתם יכולים לבצע אותה מכל מקום שנוח לכם בלי לבזבז זמן יקר. בשיחת האיפיון נדבר בהרחבה על העסק, נקבע מטרות עסקיות לאתר ואני אוכל להתחיל לבנות מבנה לאתר ולייצר את חווית המשתמש שהלקוח שלכם יעבור באתר ',
     },
     {
-      icon: <SplinePointer className="size-8 lg:size-16" />,
+      icon: <SplinePointer className="size-10 md:size-10 lg:size-16" />,
       stage: 'שלב 3',
       title: 'עיצוב בהתאמה אישית',
       secondaryTitle: 'עיצוב ייחודי ומושך לקוחות עם חווית משתמש מודרנית',
       text: ',בשלב זה האתר שלכם מתחיל לקבל חיים. מתחילים בעיצוב בסיסי מאוד ומתקדמים לעיצוב מלא ומרשים שמתאים בדיוק ללקוחות שלכם ולעסק שלכם. הכל מותאם אישית, מיוחד וללא תבניות גנריות',
     },
     {
-      icon: <Code className="size-8 lg:size-16" />,
+      icon: <Code className="size-10 md:size-10 lg:size-16" />,
       stage: 'שלב 4',
       title: 'פיתוח ובדיקות',
       secondaryTitle: 'בניית אתר בסטנדרט גבוה ובדיקות איכות QA',
       text: 'לאחר האישור שלכם על העיצוב אני מיד עובר לתהליך הפיתוח, הפיתוח מתבצע בכלים המתקדמים בתעשייה וברמת פיתוח גבוה. בנוסף האתר שלכם יעבור בדיקות איכות על מנת שנוודא שהכל עובד תקין, מהיר ומאובטח.',
     },
     {
-      icon: <Rocket className="size-8 lg:size-16" />,
+      icon: <Rocket className="size-10 md:size-10 lg:size-16" />,
       stage: 'שלב 5',
       title: 'מסירה הדרכה וליווי',
       secondaryTitle: 'אני לא משאיר אתכם לבד !',
@@ -44,8 +44,8 @@ function StepByStep() {
   ];
 
   return (
-    <div className="bg-colorBrandPurple900dark flex flex-col items-center justify-center py-20">
-      <span className="text-textsizebrandh1 text-colorBrandWhiteYellow100light text-center font-black leading-none">
+    <div className="flex flex-col items-center justify-center bg-colorBrandPurple900dark py-20">
+      <span className="text-center text-textsizebrandh1 font-black leading-none text-colorBrandWhiteYellow100light">
         <h3>איך זה עובד בפועל?</h3>
         <h3> שלב אחרי שלב </h3>
         <h3>בלי סיבוכים</h3>
@@ -64,7 +64,7 @@ function StepByStep() {
           );
         })}
       </div>
-      <div className="text-textsizebrandh4 mt-8 text-center font-black leading-none">
+      <div className="mt-8 text-center text-textsizebrandh4 font-black leading-none">
         <p>אתם לא צריכים להבין בטכנולוגיה,</p>
         <motion.p
           initial={{ letterSpacing: 0 }}
