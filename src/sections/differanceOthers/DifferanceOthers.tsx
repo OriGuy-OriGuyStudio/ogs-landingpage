@@ -4,7 +4,6 @@ import DiffTitles from '@/app/components/differance/DiffTitles';
 import ListBenefits from '../../app/components/differance/ListBenefits';
 import BenefitsImage from '../../app/components/differance/BenefitsImage';
 import StepByStep from '../steps/StepByStep';
-import DiffHighlight from '@/app/components/differance/DiffHighlight';
 import ContactMe from '../ContactMe/ContactMe';
 import Image from 'next/image';
 
