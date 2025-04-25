@@ -1,6 +1,4 @@
 'use client';
-import dynamic from 'next/dynamic';
-
 import DemoProjects from '@/sections/demoProjects/DemoProjects';
 import DifferanceOthers from '@/sections/differanceOthers/DifferanceOthers';
 import HeroSection from '@/sections/hero/Hero';

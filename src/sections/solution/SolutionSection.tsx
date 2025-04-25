@@ -125,7 +125,6 @@ const SolutionSection = ({ scrollYProgress }: SolutionSectionProps) => {
       // setHasShownConfetti(true);
 
       // Set up confetti colors and options
-      const colors = ['#3521AB', '#F55274'];
       jsConfetti.addConfetti({
         confettiColors: ['#3521AB', '#F55274'],
         confettiRadius: 6,
