@@ -11,7 +11,7 @@ function DifferanceOthers() {
   return (
     <div className="relative z-50 grid w-full overflow-y-hidden rounded-3xl bg-colorBrandPurple900dark px-4 py-20 sm:px-20">
       <Image
-        src={'/purpleCT.svg'}
+        src={'/purpleCT2.png'}
         alt={'upRight'}
         width={20}
         height={20}
@@ -20,10 +20,10 @@ function DifferanceOthers() {
       />
       <section className="z-20 block w-full">
         <DiffTitles />
-        <ul className="mt-4 flex w-full flex-col items-center justify-center gap-8 leading-snug lg:w-[100%] lg:flex-row lg:justify-between">
+        <span className="mt-4 flex w-full flex-col items-center justify-center gap-8 leading-snug lg:w-[100%] lg:flex-row lg:justify-between">
           <ListBenefits />
           <BenefitsImage />
-        </ul>
+        </span>
       </section>
 
       <StepByStep />

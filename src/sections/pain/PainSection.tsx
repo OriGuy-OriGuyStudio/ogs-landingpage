@@ -1,7 +1,13 @@
 'use client';
 import PainCTA from '@/app/components/painSection/PainCTA';
 import PainTitles from '@/app/components/painSection/PainTitles';
-import { motion, MotionValue, useTransform } from 'motion/react';
+import {
+  LazyMotion,
+  domAnimation,
+  m,
+  MotionValue,
+  useTransform,
+} from 'motion/react';
 import { useState, RefObject } from 'react';
 
 interface PainSectionProps {
@@ -17,22 +23,24 @@ const PainSection = ({ scrollYProgress, ref }: PainSectionProps) => {
   // const ref = useRef(null);
   const [showTitles, setShowTitles] = useState<boolean>(false);
   return (
-    <motion.div
-      ref={ref}
-      initial={{}}
-      style={{ scale, rotate, opacity, borderRadius: roundedCorners }}
-      className="relative flex h-screen flex-col items-center justify-center bg-colorBrandCyan200light px-4 shadow-2xl sm:gap-6 sm:px-20"
-    >
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="mt-8 flex w-fit flex-col items-center justify-center text-center text-textsizebrandh4 font-extrabold leading-none text-colorBrandGray800dark sm:text-textsizebrandh3"
+    <LazyMotion features={domAnimation}>
+      <m.div
+        ref={ref}
+        initial={{}}
+        style={{ scale, rotate, opacity, borderRadius: roundedCorners }}
+        className="relative flex h-screen flex-col items-center justify-center bg-colorBrandCyan200light px-4 shadow-2xl sm:gap-6 sm:px-20"
       >
-        <PainCTA ref={ref} setShowTitles={setShowTitles} />
-        <PainTitles showTitles={showTitles} />
-      </motion.div>
-    </motion.div>
+        <m.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="mt-8 flex w-fit flex-col items-center justify-center text-center text-textsizebrandh4 font-extrabold leading-none text-colorBrandGray800dark sm:text-textsizebrandh3"
+        >
+          <PainCTA ref={ref} setShowTitles={setShowTitles} />
+          <PainTitles showTitles={showTitles} />
+        </m.div>
+      </m.div>
+    </LazyMotion>
   );
 };
 

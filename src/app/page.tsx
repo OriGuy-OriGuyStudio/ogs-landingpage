@@ -1,4 +1,6 @@
 'use client';
+import dynamic from 'next/dynamic';
+
 import DemoProjects from '@/sections/demoProjects/DemoProjects';
 import DifferanceOthers from '@/sections/differanceOthers/DifferanceOthers';
 import HeroSection from '@/sections/hero/Hero';
@@ -39,7 +41,7 @@ export default function Home() {
   });
 
   return (
-    <main ref={container} className="relative">
+    <main ref={container} className={`relative`}>
       <section className="sticky top-0 z-0 h-screen w-full overflow-hidden bg-transparent">
         <HeroSection scrollYProgress={scrollYProgress} />
       </section>

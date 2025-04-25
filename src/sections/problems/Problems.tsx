@@ -1,6 +1,12 @@
 'use client';
 import textsChanges from '@/types/TextsChanges';
-import { motion, MotionValue, useMotionValueEvent } from 'motion/react';
+import {
+  LazyMotion,
+  domAnimation,
+  m,
+  MotionValue,
+  useMotionValueEvent,
+} from 'motion/react';
 import { useState } from 'react';
 import TextsChangeOnScroll from './TextsChangeOnScroll';
 import Image from 'next/image';
@@ -49,7 +55,7 @@ const ProblemsSection = ({ scrollYProgress }: ProblemsSectionProps) => {
   return (
     <div className="z-4 relative grid h-screen w-full bg-colorBrandPurple900dark px-4 md:px-20">
       <Image
-        src={'/purpleCT.svg'}
+        src={'/purpleCT2.png'}
         alt={'upRight'}
         width={20}
         height={20}
@@ -63,17 +69,19 @@ const ProblemsSection = ({ scrollYProgress }: ProblemsSectionProps) => {
             אתם.ן לא לבד
           </span>
         </h2>
-        <motion.div
-          id="texts"
-          className="no-scrollbar w-full flex-col items-start justify-start overflow-y-scroll text-balance text-right leading-none md:items-center md:justify-center md:text-center lg:flex lg:items-start lg:text-right"
-          key={currentText}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <TextsChangeOnScroll texts={texts[currentText]} />
-        </motion.div>
+        <LazyMotion features={domAnimation}>
+          <m.div
+            id="texts"
+            className="no-scrollbar w-full flex-col items-start justify-start overflow-y-scroll text-balance text-right leading-none md:items-center md:justify-center md:text-center lg:flex lg:items-start lg:text-right"
+            key={currentText}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <TextsChangeOnScroll texts={texts[currentText]} />
+          </m.div>
+        </LazyMotion>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import React from 'react';
 
 function ListBenefits() {
   return (
-    <span className="inline-block w-full space-y-4 rounded-lg border-r-4 border-colorBrandPurple500light pr-4 lg:w-[60%]">
+    <ul className="inline-block w-full space-y-4 rounded-lg border-r-4 border-colorBrandPurple500light pr-4 lg:w-[60%]">
       <li className="flex items-start justify-start gap-2 border-b-2 border-b-colorBrandWhiteYellow100lightOpacity pb-4">
         <Sparkle
           size={32}
@@ -64,7 +64,7 @@ function ListBenefits() {
           הכל{' '}
         </p>
       </li>
-    </span>
+    </ul>
   );
 }
 

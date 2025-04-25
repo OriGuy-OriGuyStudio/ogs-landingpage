@@ -5,7 +5,13 @@ import MainHeroTitles from '@/app/components/hero/MainHeroTitles';
 import PromotionBanner from '@/app/components/hero/PromotionBanner';
 import SecondaryHeroTitle from '@/app/components/hero/SecondaryHeroTitle';
 import SmallHeroTitle from '@/app/components/hero/SmallHeroTitle';
-import { motion, MotionValue, useTransform } from 'framer-motion';
+import {
+  MotionValue,
+  useTransform,
+  LazyMotion,
+  domAnimation,
+  m,
+} from 'framer-motion';
 
 interface HeroSectionProps {
   scrollYProgress: MotionValue<number>;
@@ -56,44 +62,46 @@ const HeroSection = ({ scrollYProgress }: HeroSectionProps) => {
   };
 
   return (
-    <motion.section
-      style={{ scale, rotate, borderRadius: rounded }}
-      className="sticky top-0 z-0 flex h-screen origin-center flex-col items-center justify-center bg-colorBrandPurple900dark px-4 text-center font-sans leading-none text-colorBrandWhiteYellow100light sm:items-center sm:justify-center sm:px-20 sm:text-center"
-    >
-      <PromotionBanner textBottom={texts.promotionTextUnder} />
-      <BluredBgColors />
-
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="flex flex-col items-center"
+    <LazyMotion features={domAnimation}>
+      <m.section
+        style={{ scale, rotate, borderRadius: rounded }}
+        className="sticky top-0 z-0 flex h-screen w-full origin-center flex-col items-center justify-center bg-colorBrandPurple900dark px-4 text-center font-sans leading-none text-colorBrandWhiteYellow100light sm:items-center sm:justify-center sm:px-20 sm:text-center"
       >
-        <motion.div variants={itemVariants}>
-          <SmallHeroTitle text={texts.smallTitle} />
-        </motion.div>
+        <BluredBgColors />
+        <PromotionBanner textBottom={texts.promotionTextUnder} />
 
-        <motion.div variants={itemVariants}>
-          <MainHeroTitles
-            mainText={texts.mainTitle}
-            colorText={texts.colorTitle}
-          />
-        </motion.div>
+        <m.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="flex flex-col items-center"
+        >
+          <m.div variants={itemVariants}>
+            <SmallHeroTitle text={texts.smallTitle} />
+          </m.div>
 
-        <motion.div variants={itemVariants}>
-          <SecondaryHeroTitle text={texts.description} />
-        </motion.div>
+          <m.div variants={itemVariants}>
+            <MainHeroTitles
+              mainText={texts.mainTitle}
+              colorText={texts.colorTitle}
+            />
+          </m.div>
 
-        <motion.div variants={itemVariants}>
-          <HeroButton text={texts.button} />
-        </motion.div>
+          <m.div variants={itemVariants}>
+            <SecondaryHeroTitle text={texts.description} />
+          </m.div>
 
-        <motion.p variants={itemVariants} className="text-textsizebrandp">
-          {texts.textUnderButton}
-        </motion.p>
-      </motion.div>
-    </motion.section>
+          <m.div variants={itemVariants}>
+            <HeroButton text={texts.button} />
+          </m.div>
+
+          <m.p variants={itemVariants} className="text-textsizebrandp">
+            {texts.textUnderButton}
+          </m.p>
+        </m.div>
+      </m.section>
+    </LazyMotion>
   );
 };
 

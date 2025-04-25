@@ -1,7 +1,7 @@
 'use client';
 import Step, { StepProps } from '@/app/components/steps/Step';
 import { Code, ListTodo, PhoneCall, Rocket, SplinePointer } from 'lucide-react';
-import { motion } from 'motion/react';
+import { LazyMotion, domAnimation, m } from 'motion/react';
 import React from 'react';
 
 function StepByStep() {
@@ -66,31 +66,33 @@ function StepByStep() {
       </div>
       <div className="mt-8 text-center text-textsizebrandh4 font-black leading-none">
         <p>אתם לא צריכים להבין בטכנולוגיה,</p>
-        <motion.p
-          initial={{ letterSpacing: 0 }}
-          whileInView={{ letterSpacing: '0.1rem' }}
-          transition={{
-            repeat: Infinity,
-            repeatType: 'reverse',
-            duration: 1,
-          }}
-          className="text-colorBrandPink500dark"
-        >
-          אני כבר דואג להכל.
-        </motion.p>
-        <p>אתם מתמקדמים בעסק שלכם,</p>
-        <motion.p
-          initial={{ letterSpacing: 0 }}
-          whileInView={{ letterSpacing: '0.1rem' }}
-          transition={{
-            repeat: Infinity,
-            repeatType: 'reverse',
-            duration: 1,
-          }}
-          className="text-colorBrandPink500dark"
-        >
-          ואני דואג שהאתר יעבוד 24/7.
-        </motion.p>
+        <LazyMotion features={domAnimation}>
+          <m.p
+            initial={{ letterSpacing: 0 }}
+            whileInView={{ letterSpacing: '0.1rem' }}
+            transition={{
+              repeat: Infinity,
+              repeatType: 'reverse',
+              duration: 1,
+            }}
+            className="text-colorBrandPink500dark"
+          >
+            אני כבר דואג להכל.
+          </m.p>
+          <p>אתם מתמקדמים בעסק שלכם,</p>
+          <m.p
+            initial={{ letterSpacing: 0 }}
+            whileInView={{ letterSpacing: '0.1rem' }}
+            transition={{
+              repeat: Infinity,
+              repeatType: 'reverse',
+              duration: 1,
+            }}
+            className="text-colorBrandPink500dark"
+          >
+            ואני דואג שהאתר יעבוד 24/7.
+          </m.p>
+        </LazyMotion>
       </div>
     </div>
   );

@@ -1,9 +1,13 @@
-import type { NextConfig } from 'next';
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   env: {
     MAKE_URL: process.env.MAKE_URL,
   },
+  // תוכל להוסיף כאן גם future flags או שאר קונפיגים
 };
 
-export default nextConfig;
+module.exports = withBundleAnalyzer(nextConfig);
