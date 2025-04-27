@@ -7,7 +7,9 @@ export const metadata: Metadata = {
   title: 'הלקוחות שלך יגידו: זה בדיוק מה שחיפשתי',
   description: 'פותח על ידי סטודיו אורי גיא',
 };
-const rubik = Rubik();
+const rubik = Rubik({
+  subsets: ['hebrew'],
+});
 export default function RootLayout({
   children,
 }: Readonly<{
