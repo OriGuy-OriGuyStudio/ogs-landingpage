@@ -11,7 +11,7 @@ import {
 } from 'motion/react';
 import Image from 'next/image';
 import React, { useState } from 'react';
-import JSConfetti from 'js-confetti';
+// import JSConfetti from 'js-confetti';
 
 interface SolutionSectionProps {
   scrollYProgress: MotionValue<number>;
@@ -106,7 +106,7 @@ const SolutionSection = ({ scrollYProgress }: SolutionSectionProps) => {
   // const [hasShownConfetti, setHasShownConfetti] = useState(false);
   // Listen for scroll progress changes and update the text + trigger confetti
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-    const jsConfetti = new JSConfetti();
+    // const jsConfetti = new JSConfetti();
 
     // Text changing logic
     if (latest < 0.25) {
@@ -123,20 +123,26 @@ const SolutionSection = ({ scrollYProgress }: SolutionSectionProps) => {
     // and we haven't shown it yet
     if (latest > 0 && latest < 0.06) {
       // setHasShownConfetti(true);
-
       // Set up confetti colors and options
-      jsConfetti.addConfetti({
-        confettiColors: ['#3521AB', '#F55274'],
-        confettiRadius: 6,
-        confettiNumber: 25,
-      });
     }
-    // setHasShownConfetti(false);
-    //
-    setTimeout(() => {
-      jsConfetti.clearCanvas();
-    }, 2500);
   });
+
+  // useEffect(() => {
+  //   const jsConfetti = new JSConfetti();
+  //   jsConfetti.addConfetti({
+  //     confettiColors: ['#3521AB', '#F55274'],
+  //     confettiRadius: 6,
+  //     confettiNumber: 50,
+  //   });
+  //   // setHasShownConfetti(false);
+  //   //
+
+  //   return () => {
+  //     setTimeout(() => {
+  //       jsConfetti.clearCanvas();
+  //     }, 2500);
+  //   };
+  // }, []);
 
   return (
     <div className="flex h-screen flex-col items-center justify-center gap-2 text-balance rounded-3xl bg-colorBrandGreen500medium px-4 text-colorBrandGray800dark md:px-20">
